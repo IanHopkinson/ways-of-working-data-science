@@ -19,7 +19,8 @@ def write_dictionary(
 
     :param filename: file path to the output file
     :param data: A list of ordered dictionaries to write
-    :param append: if True then data is appended to an existing file, if False and the file exists then the file is deleted
+    :param append: if True then data is appended to an existing file, if False and the file exists
+                   then the file is deleted
     :param delimiter: Delimiter character as per dictwriter interface
     :return: returns None
     """

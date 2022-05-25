@@ -27,7 +27,7 @@ from wow.db_utils import (
     delete_from_db,
 )
 
-# @unittest.skipIf(not mysql_connector_installed, "MariaDB/MySQL connector is not installed so skipping MySQL/MariaDB tests")
+
 class MariaDBUtilitiesTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -46,7 +46,6 @@ class MariaDBUtilitiesTests(unittest.TestCase):
         db_config = db_config_template.copy()
         db_config["db_name"] = "test"
         password = os.environ["MARIA_DB_PASSWORD"]
-        port = int(os.getenv("MARIA_DB_PORT", "3306"))
 
         conn = pymysql.connect(host="127.0.0.1", user="root", password=password)
 
@@ -59,6 +58,7 @@ class MariaDBUtilitiesTests(unittest.TestCase):
         try:
             conn.database = db_config["db_name"]
         except pymysql.Error as err:
+            print(err, flush=True)
             raise
         # Do a schema query
         conn.close()
@@ -477,7 +477,7 @@ class DatabaseUtilitiesTests(unittest.TestCase):
         sql_query = "select * from test;"
 
         try:
-            results = list(read_db(sql_query, db_config))
+            _ = list(read_db(sql_query, db_config))
         except IOError:
             pass
 
