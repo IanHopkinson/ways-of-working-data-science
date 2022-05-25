@@ -1,0 +1,4 @@
+
+*.pyc
+
+src/wow.egg-info/
