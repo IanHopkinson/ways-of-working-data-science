@@ -3,7 +3,7 @@
 
 import unittest
 
-from wow.module_demo import print_something
+from wow.demo_one import print_something
 
 
 class TestModuleDemo(unittest.TestCase):
