@@ -20,7 +20,7 @@ and activate it:
 
 and then install using:
 
-`pip install . -e`
+`pip install -e .`
 
 ## Scripts
 
@@ -33,6 +33,3 @@ In the src/wow directory:
 In the tests/ directory:
 - **test_db_utils.py** - tests the db_utils.py functions
 - **test_demo_one.py** - tests the demo_one.py functions
-
-
-
